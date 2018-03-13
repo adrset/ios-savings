@@ -9,6 +9,12 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Book</string>
+            <string>Avenir-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
@@ -43,27 +49,66 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrN-pX-oZR">
+                                <rect key="frame" x="20.5" y="338" width="335" height="89"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="65"/>
+                                <color key="textColor" red="1" green="0.97844797865465116" blue="0.98419064058182237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzC-Wt-z7d">
+                                <rect key="frame" x="146" y="432" width="83" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="83" id="Er3-26-3pP"/>
+                                    <constraint firstAttribute="height" constant="21" id="bjB-x9-Xzm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="0.99124791615732766" green="0.95549376836269229" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tS-y4-fBe">
+                                <rect key="frame" x="20" y="597" width="335" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="GCD-Yd-x3q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="21"/>
+                                <state key="normal" title="Clear calculator">
+                                    <color key="titleColor" red="0.98716145264903743" green="0.89754459652981078" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClearCalculatorTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Al-bd-95T"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ZRm-Ce-uVW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="0JE-5A-8Jt"/>
                             <constraint firstItem="ZRm-Ce-uVW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1gi-TO-EMh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4tS-y4-fBe" secondAttribute="bottom" constant="20" id="5Ll-v6-lHP"/>
+                            <constraint firstItem="4tS-y4-fBe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7rT-5l-eMa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ONc-74-Ny1" secondAttribute="trailing" constant="20" id="AVJ-HR-9Vn"/>
                             <constraint firstItem="ONc-74-Ny1" firstAttribute="top" secondItem="ZRm-Ce-uVW" secondAttribute="bottom" constant="78" id="B4a-sf-gRM"/>
+                            <constraint firstItem="RrN-pX-oZR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CbT-gG-Fh4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4tS-y4-fBe" secondAttribute="trailing" constant="20" id="EAh-qd-vba"/>
                             <constraint firstItem="kau-gR-KaF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HFv-aw-ehd"/>
+                            <constraint firstItem="RrN-pX-oZR" firstAttribute="top" secondItem="h7W-dh-P9M" secondAttribute="bottom" constant="45" id="Jh5-de-ttK"/>
                             <constraint firstItem="h7W-dh-P9M" firstAttribute="leading" secondItem="ONc-74-Ny1" secondAttribute="leading" id="Jj2-e7-jdg"/>
                             <constraint firstItem="kau-gR-KaF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Kkr-01-pdq"/>
+                            <constraint firstItem="uzC-Wt-z7d" firstAttribute="top" secondItem="RrN-pX-oZR" secondAttribute="bottom" constant="5" id="MlS-bN-vFz"/>
                             <constraint firstItem="ONc-74-Ny1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="OO4-Qo-aAH"/>
+                            <constraint firstItem="uzC-Wt-z7d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pqd-CV-Axo"/>
                             <constraint firstItem="h7W-dh-P9M" firstAttribute="height" secondItem="ONc-74-Ny1" secondAttribute="height" id="TbZ-bw-o0A"/>
                             <constraint firstItem="kau-gR-KaF" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="esy-El-z6c"/>
                             <constraint firstItem="kau-gR-KaF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lvF-gT-YN9"/>
                             <constraint firstItem="h7W-dh-P9M" firstAttribute="trailing" secondItem="ONc-74-Ny1" secondAttribute="trailing" id="pJm-6P-xLQ"/>
                             <constraint firstItem="h7W-dh-P9M" firstAttribute="top" secondItem="ONc-74-Ny1" secondAttribute="bottom" constant="20" id="qyv-Ny-aDM"/>
+                            <constraint firstItem="RrN-pX-oZR" firstAttribute="width" secondItem="h7W-dh-P9M" secondAttribute="width" id="y17-bV-wqI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="hoursLbl" destination="uzC-Wt-z7d" id="hv0-5t-7u2"/>
                         <outlet property="itemTxt" destination="h7W-dh-P9M" id="fOu-M4-Ccs"/>
+                        <outlet property="resultLbl" destination="RrN-pX-oZR" id="iW7-xV-ZmE"/>
                         <outlet property="wageTxt" destination="ONc-74-Ny1" id="yez-jt-HFf"/>
                     </connections>
                 </viewController>

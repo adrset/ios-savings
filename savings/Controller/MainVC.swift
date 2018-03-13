@@ -10,8 +10,11 @@ import UIKit
 
 class MainVC: UIViewController {
 
+    @IBOutlet weak var resultLbl: UILabel!
+    @IBOutlet weak var hoursLbl: UILabel!
     @IBOutlet weak var itemTxt: CurrencyTxtField!
     @IBOutlet weak var wageTxt: CurrencyTxtField!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,10 +25,50 @@ class MainVC: UIViewController {
         calcBtn.addTarget(self, action: #selector(MainVC.calculate), for: .touchUpInside)
         wageTxt.inputAccessoryView = calcBtn
         itemTxt.inputAccessoryView = calcBtn
+        
+        hideResults()
+        
+    }
+    
+    func hideResults(){
+        resultLbl.isHidden = true
+        hoursLbl.isHidden = true
+    }
+    
+    func showResults(){
+        resultLbl.isHidden = false
+        hoursLbl.isHidden = false
+    }
+    
+    @IBAction func onClearCalculatorTapped(_ sender: Any) {
+        hideResults()
+        wageTxt.text = ""
+        itemTxt.text = ""
     }
 
     @objc func calculate(){
-        print("Accessed!")
+        
+       
+        if let wageTxt = wageTxt.text, let itemTxt = itemTxt.text {
+           
+            let formatter = NumberFormatter()
+            
+            let wageNum = formatter.number(from: wageTxt)
+            
+            let itemNum = formatter.number(from: itemTxt)
+            
+            if let wageNum = wageNum, let itemNum = itemNum{
+                // test if user put in numbers
+                
+                view.endEditing(true)
+                showResults()
+                    
+                resultLbl.text = "\(Wage.getHours(forWage: wageNum.doubleValue, andPrice: itemNum.doubleValue))"
+                    
+                
+            }
+            
+        }
     }
 
 
